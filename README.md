@@ -19,4 +19,40 @@ scrapy+splash+mangodb+分布式爬虫demo
 `docker ps`<br>
 找出splash所在的CONTAINER ID，执行`docker kill id`命令就可以退出
 
+### splash的基本配置
+
+* 基本splash代码
+```
+function main(splash, args) {
+    splash.images_enabled = false
+    splash:go("https://www.baidu.com")
+    return {
+        html = splash:html()
+    }   
+}
+```
+* 控制浏览器插件是否开启，默认为false
+```
+splash.plugins_enabled = false 
+```
+* 控制页面上下左右滚动
+```
+splash.scroll_position = {x=100,y=100}
+```
+* go方法
+<br>
+`ok, reason = splash:go(url)`<br>
+| 可配置参数               | 含义      | 
+|:------------------------:|:-----------:|
+| url                | 请求的url |
+| baseurl                | 可选参数，默认为空，表示资源加载的相对路径 |
+| headers                | 可选参数，默认为空，表示请求头 |
+| http_method                | 可选参数，默认为GET |
+| body                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/json |
+| formdata                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/x-www-form-urlencoded |
+
+
+      
+
+
 
