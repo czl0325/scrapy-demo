@@ -44,24 +44,24 @@ splash.scroll_position = {x=100,y=100}
 `ok, reason = splash:go(url)`
 <br>
 
-| 可配置参数               | 含义      | 备注 | 
-| --- |  --- |  ---- | 
-| url                | 请求的url | 无 |
-| baseurl                | 可选参数，默认为空，表示资源加载的相对路径 |无 |
-| headers                | 可选参数，默认为空，表示请求头 |无 |
-| http_method                | 可选参数，默认为GET |无 |
-| body                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/json |无 |
-| formdata                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/x-www-form-urlencoded |无 |
+| 可配置参数               | 含义      | 
+| --- |  --- | 
+| url                | 请求的url |
+| baseurl                | 可选参数，默认为空，表示资源加载的相对路径 |
+| headers                | 可选参数，默认为空，表示请求头 |
+| http_method                | 可选参数，默认为GET |
+| body                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/json |
+| formdata                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/x-www-form-urlencoded |
 <br>
 
 * wait()控制页面的等待时间
 <br>
 
-| 可配置参数               | 含义      | 备注 | 
-| --- |  --- |  ---- | 
-| time  | 等待的秒数 | 无 |
-| cancel_on_redirect| 可选参数，默认为false，如果发生重定向就停止，返回重定向的结果 |无 |
-| cancel_on_error    | 可选参数，默认为false，如果发生错误就停止等待 |无 |
+| 可配置参数               | 含义      | 
+| --- |  --- | 
+| time  | 等待的秒数 | 
+| cancel_on_redirect| 可选参数，默认为false，如果发生重定向就停止，返回重定向的结果 |
+| cancel_on_error    | 可选参数，默认为false，如果发生错误就停止等待 |
 
 * evaljs()与runjs()
 
