@@ -41,18 +41,52 @@ splash.scroll_position = {x=100,y=100}
 ```
 * go方法
 <br>
-`ok, reason = splash:go(url)`<br>
-| 可配置参数               | 含义      | 
-|:------------------------:|:-----------:|
-| url                | 请求的url |
-| baseurl                | 可选参数，默认为空，表示资源加载的相对路径 |
-| headers                | 可选参数，默认为空，表示请求头 |
-| http_method                | 可选参数，默认为GET |
-| body                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/json |
-| formdata                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/x-www-form-urlencoded |
+`ok, reason = splash:go(url)`
+<br>
 
+| 可配置参数               | 含义      | 备注 | 
+| --- |  --- |  ---- | 
+| url                | 请求的url | 无 |
+| baseurl                | 可选参数，默认为空，表示资源加载的相对路径 |无 |
+| headers                | 可选参数，默认为空，表示请求头 |无 |
+| http_method                | 可选参数，默认为GET |无 |
+| body                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/json |无 |
+| formdata                | 可选参数，默认为空，发送post请求的表单数据，使用的content-type为application/x-www-form-urlencoded |无 |
+<br>
 
-      
+* wait()控制页面的等待时间
+<br>
 
+| 可配置参数               | 含义      | 备注 | 
+| --- |  --- |  ---- | 
+| time  | 等待的秒数 | 无 |
+| cancel_on_redirect| 可选参数，默认为false，如果发生重定向就停止，返回重定向的结果 |无 |
+| cancel_on_error    | 可选参数，默认为false，如果发生错误就停止等待 |无 |
+
+* evaljs()与runjs()
+
+```
+function main(splash, args) {
+    splash:go("https://www.baidu.com")
+    splash:runjs(" foo = function { return 'baidu' }")
+    local result = splash:evaljs("foo()")
+    return result 
+}
+```
+
+* html                  获取网页源代码
+* png                   获取网页截图
+* har                   获取网页加载过程描述
+* url                   获取正在访问的网页
+* get_cookies           获取当前页面的cookie
+* add_cookie            当前页面添加cookie
+* clear_cookies()       清空cookie
+* set_user_agent()      设置user_agent
+* set_custom_headers()  设置请求头
+* select()              选择相应的节点
+* send_text()           填写文本
+* mouse_click()         模拟鼠标点击
+
+### python与splash相结合
 
 
